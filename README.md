@@ -1,10 +1,10 @@
-## I will Paramidate You... ##
+## I will Paraminate You... ##
 
-Paramidator is a flexible and powerful paramater validator module that allows you to define validation rules and error messages in a testable manner.
+Paraminator is a flexible and powerful paramater validator module that allows you to define validation rules and error messages in a testable manner.
 
 It is the Arnold Schwarzenegger of validation.
 
-![Paramidator](https://github.com/ekryski/paramidator/raw/master/paramidator.jpg)
+![Paraminator](https://github.com/ekryski/paraminator/raw/master/paramidator.jpg)
 
 ### Defining Rules ###
 Rules are defined in a JSON structure making it easy to customize and read.
@@ -25,18 +25,18 @@ Rules are defined in a JSON structure making it easy to customize and read.
 ### Validating ###
 
 	
-	var paramidator = require('paramidator');
-	var validate = paramidator.validate;
+	var paraminator = require('paraminator');
+	var validate = paraminator.validate;
 
 	var todoRules = {
 		'id': {
 			'required': true,
 			'message': 'Need to provide a valid id',
 			'rules': [
-				paramidator.isNotNull(),
-				paramidator.isNotEmpty(),
-				paramidator.isNotNan(),
-				paramidator.regEx(/foo/i)
+				paraminator.isNotNull(),
+				paraminator.isNotEmpty(),
+				paraminator.isNotNan(),
+				paraminator.regEx(/foo/i)
 			]
 		}
 	}
