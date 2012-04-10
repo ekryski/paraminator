@@ -33,10 +33,10 @@ Rules are defined in a JSON structure making it easy to customize and read.
 			'required': true,
 			'message': 'Need to provide a valid id',
 			'rules': [
-				'isNotNull',
-				'isNotEmpty',
-				'isNotNan',
-				'regEx(/foo/i)'
+				paramidator.isNotNull(),
+				paramidator.isNotEmpty(),
+				paramidator.isNotNan(),
+				paramidator.regEx(/foo/i)
 			]
 		}
 	}
