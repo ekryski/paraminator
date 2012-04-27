@@ -6,6 +6,8 @@ It is the Arnold Schwarzenegger of validation.
 
 ![Paraminator](https://github.com/ekryski/paraminator/raw/master/paramidator.jpg)
 
+**This is currently under development and is not intended for use yet!**
+
 ### Defining Rules ###
 Rules are defined in a JSON structure making it easy to customize and read.
 
@@ -14,10 +16,15 @@ Rules are defined in a JSON structure making it easy to customize and read.
 			'required': true,
 			'message': 'Need to provide a valid id',
 			'rules': [
-				'isNotNull',
-				'isNotEmpty',
-				'isNotNan',
-				'regEx(/foo/i)'
+				paraminator.isNotNull(),
+				paraminator.regEx(/foo/i)
+			]
+		},
+		'number': {
+			'required': true,
+			'message': 'Need to provide a valid number',
+			'rules': [
+				paraminator.isFloat()
 			]
 		}
 	}
@@ -26,7 +33,6 @@ Rules are defined in a JSON structure making it easy to customize and read.
 
 	
 	var paraminator = require('paraminator');
-	var validate = paraminator.validate;
 
 	var todoRules = {
 		'id': {
@@ -34,16 +40,16 @@ Rules are defined in a JSON structure making it easy to customize and read.
 			'message': 'Need to provide a valid id',
 			'rules': [
 				paraminator.isNotNull(),
-				paraminator.isNotEmpty(),
-				paraminator.isNotNan(),
 				paraminator.regEx(/foo/i)
 			]
 		}
 	}
 
 	app.get('/todos:id', function(req, res, next){
-		req.validate( todoRules, function(errors, valid){
+		paraminator.validate( todoRules, req.body, function(errors, warnings, valid){
 			if (!valid) console.log(errors);
 			else console.log('parameters are valid!');
 		});
 	});
+
+This is largely based off of chriso's [node-validator](https://github.com/chriso/node-validator) however I wanted something that is more flexible and that can do proper rule chaining.

@@ -1,0 +1,29 @@
+{
+	"name": "paraminator",
+	"description": "The Arnold Inspired Validator",
+	"version": "0.0.1",
+	"homepage": "https://github.com/ekryski/paraminator",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/ekryski/paraminator.git"
+	},
+	"author": {
+		"name": "Eric Kryski",
+		"email": "<e.kryski@gmail.com>"
+	},
+	"main": "lib",
+	"directories": {
+		"lib": "lib"
+	},
+	"scripts": {
+		"test": "make test"
+	},
+	"engines": {
+		"node": ">=0.4"
+	},
+	"devDependencies": {
+		"stub.js": ">=1.0.1",
+    	"should": "0.5.1",
+    	"mocha": ">=0.13.0"
+	}
+}
